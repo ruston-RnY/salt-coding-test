@@ -1,0 +1,44 @@
+<header class="my-6">
+  <section class="flex items-center mb-8">
+    <h1 class="text-5xl text-base-yellow font-semibold">
+      Social<span class="font-normal text-base-yellow-secondary">Network</span>
+    </h1>
+    <div class="ml-auto flex items-center">
+      <div class="input-search md:w-[22rem] bg-base-yellow py-3 px-6 relative">
+        <input
+          type="text"
+          placeholder="Find..."
+          class="bg-transparent outline-0 text-base-primary w-[90%]"
+        />
+        <i
+          class="fa fa-search text-lg text-base-primary absolute right-4"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <button
+        class="py-3 px-4 text-center flex items-center w-28 text-sm bg-base-yellow mx-4 text-base-primary"
+      >
+        <i class="fa fa-arrow-up text-lg" aria-hidden="true"></i>
+        <span class="ml-2 font-bold">Upload</span>
+      </button>
+      <div class="flex items-center">
+        <button class="py-3 px-5 bg-base-yellow text-base-primary">
+          <i class="fa fa-user text-lg" aria-hidden="true"></i>
+        </button>
+        <div class="ml-2 text-base-yellow">
+          <h3 class="text-xl font-semibold">Waseem</h3>
+          <span class="text-sm">Arshad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-b border-base-yellow py-3">
+    <ul class="flex items-center text-base-yellow text-lg font-bold">
+      <li class="mr-4" *ngFor="let menu of menus; let last = last">
+        <a [routerLink]="menu.url">{{ menu.name }}</a>
+        <span class="ml-4" *ngIf="!last">/</span>
+      </li>
+    </ul>
+  </section>
+</header>

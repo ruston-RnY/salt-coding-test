@@ -7,7 +7,7 @@ module.exports = {
         "base-primary": "#953E46",
         "base-yellow": "#F4E3CF",
         "base-yellow-secondary": "#F4E3CF8F",
-        "base-black": "#1E1E1E",
+        "base-black-transparent": "rgb(0 0 0 / 55%)",
         "base-brown": "#323232",
         "base-gray": "#CCCCCC",
         "base-orange": "#F39C12",

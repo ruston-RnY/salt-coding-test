@@ -1,17 +1,28 @@
 <footer class="border-t border-base-yellow mt-16 pb-8">
   <div class="flex items-center pt-6">
-    <a href="" class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary mr-4">
+    <a
+      href=""
+      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 sm:scale-0 scale-75"
+    >
       <i class="fa fa-twitter text-lg m-auto" aria-hidden="true"></i>
     </a>
-    <a href="" class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary mr-4">
+    <a
+      href=""
+      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 sm:scale-0 scale-75"
+    >
       <i class="fa fa-linkedin text-lg m-auto" aria-hidden="true"></i>
     </a>
-    <a href="" class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary mr-4">
+    <a
+      href=""
+      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 sm:scale-0 scale-75"
+    >
       <i class="fa fa-facebook text-lg m-auto" aria-hidden="true"></i>
     </a>
   </div>
 
-  <ul class="flex items-center text-base-yellow text-sm font-bold mt-8">
+  <ul
+    class="flex flex-wrap items-center text-base-yellow text-sm font-bold mt-8"
+  >
     <li class="mr-4" *ngFor="let menu of footerMenus; let last = last">
       <a [routerLink]="menu.url">{{ menu.name }}</a>
       <span class="ml-4" *ngIf="!last">/</span>

@@ -1,39 +1,92 @@
-<header class="my-6">
-  <section class="flex items-center mb-8">
+<header class="relative my-6">
+  <section
+    class="flex items-center border-b border-base-yellow pb-4 lg_custom:pb-6"
+  >
     <h1 class="text-5xl text-base-yellow font-semibold">
       Social<span class="font-normal text-base-yellow-secondary">Network</span>
     </h1>
-    <div class="ml-auto flex items-center">
-      <div class="input-search md:w-[22rem] bg-base-yellow py-3 px-6 relative">
-        <input
-          type="text"
-          placeholder="Find..."
-          class="bg-transparent outline-0 text-base-primary w-[90%]"
-        />
-        <i
-          class="fa fa-search text-lg text-base-primary absolute right-4"
-          aria-hidden="true"
-        ></i>
-      </div>
-      <button
-        class="py-3 px-4 text-center flex items-center w-28 text-sm bg-base-yellow mx-4 text-base-primary"
-      >
-        <i class="fa fa-arrow-up text-lg" aria-hidden="true"></i>
-        <span class="ml-2 font-bold">Upload</span>
+
+    <div class="ml-auto lg_custom:hidden block">
+      <button class="text-base-yellow" (click)="onClickShow()">
+        <i class="fa fa-bars text-2xl" aria-hidden="true"></i>
       </button>
+    </div>
+
+    <div class="ml-auto lg_custom:block hidden">
       <div class="flex items-center">
-        <button class="py-3 px-5 bg-base-yellow text-base-primary">
-          <i class="fa fa-user text-lg" aria-hidden="true"></i>
+        <div
+          class="input-search md:w-[22rem] bg-base-yellow py-3 px-6 relative"
+        >
+          <input
+            type="text"
+            placeholder="Find..."
+            class="bg-transparent outline-0 text-base-primary w-[90%]"
+          />
+          <i
+            class="fa fa-search text-lg text-base-primary absolute right-4"
+            aria-hidden="true"
+          ></i>
+        </div>
+        <button
+          class="py-3 px-4 text-center flex items-center w-28 text-sm bg-base-yellow mx-4 text-base-primary"
+        >
+          <i class="fa fa-arrow-up text-lg" aria-hidden="true"></i>
+          <span class="ml-2 font-bold">Upload</span>
         </button>
-        <div class="ml-2 text-base-yellow">
-          <h3 class="text-xl font-semibold">Waseem</h3>
-          <span class="text-sm">Arshad</span>
+        <div class="flex items-center">
+          <button class="py-3 px-5 bg-base-yellow text-base-primary">
+            <i class="fa fa-user text-lg" aria-hidden="true"></i>
+          </button>
+          <div class="ml-2 text-base-yellow">
+            <h3 class="text-xl font-semibold">Waseem</h3>
+            <span class="text-sm">Arshad</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="transition-all fixed w-screen left-0 z-50"
+      [ngClass]="{
+        'mobile-menu top-0 bg-base-primary delay-100 h-screen opacity-100':
+          showMenu,
+        'h-0 -top-14 bg-transparent opacity-0': !showMenu
+      }"
+    >
+      <div class="h-full flex">
+        <button
+          class="text-base-yellow absolute right-6 top-3"
+          (click)="onClickShow()"
+        >
+          <i class="fa fa-times text-2xl" aria-hidden="true"></i>
+        </button>
+        <div class="m-auto">
+          <ul class="text-base-yellow text-center">
+            <li class="mb-4" *ngFor="let menu of menus; let last = last">
+              <a [routerLink]="menu.url">{{ menu.name }}</a>
+            </li>
+            <li>
+              <div
+                class="input-search border border-base-yellow py-3 px-6 relative"
+              >
+                <input
+                  type="text"
+                  placeholder="Find..."
+                  class="bg-transparent outline-0 text-base-yellow"
+                />
+                <i
+                  class="fa fa-search text-lg text-base-yellow absolute right-4"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="border-t border-b border-base-yellow py-3">
+  <section class="border-b border-base-yellow py-3 lg_custom:block hidden">
     <ul class="flex items-center text-base-yellow text-lg font-bold">
       <li class="mr-4" *ngFor="let menu of menus; let last = last">
         <a [routerLink]="menu.url">{{ menu.name }}</a>

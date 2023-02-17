@@ -1,86 +1,109 @@
-<div class="home">
-  <section>
-    <div class="grid grid-cols-3 gap-4">
-      <div class="col-span-2">
-        <div class="flex items-baseline text-base-yellow font-bold">
-          <h1 class="text-2xl">Videos</h1>
-          <h4 class="text-sm">Browse all videos</h4>
+<div class="home mt-8">
+  <section class="section-1 mb-16">
+    <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
+      <div class="lg:col-span-2">
+        <app-multiple-card></app-multiple-card>
+      </div>
+
+      <div class="mt-6 lg:mt-0">
+        <div class="flex justify-between text-base-yellow font-bold">
+          <h1 class="text-2xl">Activity</h1>
+          <div class="flex items-center">
+            <button class="text-sm mt-auto">View Timeline /</button>
+            <button class="text-sm mt-auto ml-1">Filter</button>
+          </div>
         </div>
 
-        <!-- <div class="grid grid-rows-4 grid-flow-col gap-4">
-          <div class="bg-base-yellow row-span-2">
-            <img src="assets/images/img.png" alt="" />
-          </div>
-          <div class="row-span-2">
-            <div class="grid grid-cols-2 gap-4">
-              <div class="w-full bg-base-yellow">
-                <div class="tes">
-                  <img src="assets/images/img.png" alt="" />
-                </div>
+        <div class="mt-4 border-t-2 border-base-yellow">
+          <div class="block sm:flex lg:block">
+            <div class="xl:flex items-center mt-4">
+              <div class="sm:h-24 sm:w-40">
+                <img
+                  src="assets/images/img.png"
+                  class="h-full w-full object-cover"
+                />
               </div>
-              <div class="w-full bg-base-yellow">
-                <div class="bg-base-yellow tes">
-                  <img src="assets/images/img.png" alt="" />
+              <div class="mt-2 xl:ml-2 text-base-yellow">
+                <h2 class="font-bold">
+                  John Stainlor
+                  <span class="font-light text-sm">commented</span>
+                </h2>
+                <h2 class="font-light">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo, hic.
+                </h2>
+                <div>
+                  <i class="fa fa-comment" aria-hidden="true"></i>
+                  <span class="font-light text-sm ml-2">3 comment</span>
                 </div>
               </div>
             </div>
-          </div>
-          <ng-container *ngFor="let item of data | slice: -2">
-            <div class="bg-base-yellow tes">
-              <img src="assets/images/img.png" alt="" />
-            </div>
-          </ng-container>
-          <div class="bg-base-yellow tes">
-            <img src="assets/images/img.png" alt="" />
-          </div>
-        </div> -->
 
-        <div class="grid grid-cols-3 gap-4">
-          <div class="col-span-2">
-            <div class="grid grid-rows-3 grid-flow-col gap-4">
-              <div
-                class="bg-base-yellow row-span-2 bg-card"
-                style="background-image: url(assets/images/img.png)"
-              >
-              <div class="h-full flex p-4 bg-base-black-transparent">
-                <div class="mt-auto text-base-yellow font-bold w-full">
-                  <h2 class="text-2xl">How to improve skill</h2>
-                  <div class="flex items-center justify-between">
-                    <h4>Toni aja</h4>
-                    <h5>400 views</h5>
-                  </div>
-                </div>
+            <div class="xl:flex items-center mt-4">
+              <div class="sm:h-24 sm:w-40">
+                <img
+                  src="assets/images/img.png"
+                  class="h-full w-full object-cover"
+                />
               </div>
-              </div>
-              <div class="flex justify-between">
-                <div class="bg-base-yellow w-1/2 mr-2">
-                  <img src="assets/images/img.png" alt="" />
-                </div>
-                <div class="bg-base-yellow w-1/2 ml-2">
-                  <img src="assets/images/img.png" alt="" />
+              <div class="mt-2 xl:ml-2 text-base-yellow">
+                <h2 class="font-bold">
+                  John Stainlor
+                  <span class="font-light text-sm">commented</span>
+                </h2>
+                <h2 class="font-light">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Explicabo, hic.
+                </h2>
+                <div>
+                  <i class="fa fa-comment" aria-hidden="true"></i>
+                  <span class="font-light text-sm ml-2">3 comment</span>
                 </div>
               </div>
             </div>
           </div>
-          <div class="grid grid-rows-3 grid-flow-col gap-4">
-            <div class="bg-base-yellow">
-              <img src="assets/images/img.png" alt="" />
-            </div>
-            <div class="bg-base-yellow">
-              <img src="assets/images/img.png" alt="" />
-            </div>
-            <div class="bg-base-yellow">
-              <img src="assets/images/img.png" alt="" />
-            </div>
-          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="section-2 mb-16">
+    <div class="grid grid-cols-3 gap-4">
+      <div class="col-span-2">
+        <div>
+          <app-multiple-card></app-multiple-card>
+        </div>
+        <div class="mt-16">
+          <app-multiple-card></app-multiple-card>
         </div>
       </div>
 
       <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa adipisci
-        omnis assumenda aperiam molestias pariatur, iusto illum est maxime, at
-        magni odit, quae sequi a id deserunt quos quo culpa.
+        <div class="flex justify-between text-base-yellow font-bold">
+          <h1 class="text-2xl">Channels</h1>
+          <div class="flex items-center">
+            <button class="text-sm mt-auto">Browse all channels</button>
+          </div>
+        </div>
+        <div class="pt-4 border-t-2 border-base-yellow">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="relative bg-base-yellow h-36">
+              <h4
+                class="absolute text-base-primary bottom-2 left-3 font-bold text-xl"
+              >
+                Google
+              </h4>
+            </div>
+            <div class="relative bg-base-yellow h-36">
+              <h4
+                class="absolute text-base-primary bottom-2 left-3 font-bold text-xl"
+              >
+                Google
+              </h4>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>

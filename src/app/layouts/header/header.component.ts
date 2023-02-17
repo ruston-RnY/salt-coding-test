@@ -29,7 +29,13 @@ export class HeaderComponent implements OnInit {
     },
   ];
 
+  showMenu: boolean = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClickShow() {
+    this.showMenu = !this.showMenu;
+  }
 }

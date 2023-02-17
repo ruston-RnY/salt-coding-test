@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-multiple-card',
   templateUrl: './multiple-card.component.html',
-  styleUrls: ['./multiple-card.component.scss']
+  styleUrls: ['./multiple-card.component.scss'],
 })
 export class MultipleCardComponent implements OnInit {
+  @Input() title!: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

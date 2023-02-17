@@ -16,7 +16,7 @@
                 Release: {{ firstArr.release_date | date : "h MMMM YYYY" }}
               </h4>
               <h5 class="text-xs sm:text-sm md:text-base">
-                {{ firstArr.vote_average }} Rating
+                Rating: {{ firstArr.vote_average }}
               </h5>
             </div>
           </div>
@@ -32,13 +32,13 @@
             class="h-full w-full object-cover brightness-50"
           />
           <div class="absolute bottom-0 text-base-yellow font-bold w-full p-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl">{{ item.title }}</h2>
+            <h2 class="text-lg" style="line-height: 20px">{{ item.title }}</h2>
             <div class="flex items-center justify-between">
               <h4 class="text-xs sm:text-sm md:text-base md:hidden block">
                 Release: {{ item.release_date | date : "h MMMM YYYY" }}
               </h4>
               <h5 class="text-xs sm:text-sm md:text-base">
-                {{ item.vote_average }} Rating
+                Rating: {{ item.vote_average }}
               </h5>
             </div>
           </div>

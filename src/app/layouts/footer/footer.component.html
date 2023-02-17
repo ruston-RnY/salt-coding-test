@@ -2,26 +2,26 @@
   <div class="flex items-center pt-6">
     <a
       href=""
-      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 sm:scale-0 scale-75"
+      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 scale-75 md:scale-100"
     >
       <i class="fa fa-twitter text-lg m-auto" aria-hidden="true"></i>
     </a>
     <a
       href=""
-      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 sm:scale-0 scale-75"
+      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 scale-75 md:scale-100"
     >
       <i class="fa fa-linkedin text-lg m-auto" aria-hidden="true"></i>
     </a>
     <a
       href=""
-      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 sm:scale-0 scale-75"
+      class="bg-base-yellow p-2 w-10 h-10 flex text-base-primary sm:mr-4 mr-2 scale-75 md:scale-100"
     >
       <i class="fa fa-facebook text-lg m-auto" aria-hidden="true"></i>
     </a>
   </div>
 
   <ul
-    class="flex flex-wrap items-center text-base-yellow text-sm font-bold mt-8"
+    class="flex flex-wrap items-center text-base-yellow text-xs sm:text-sm font-bold mt-4 sm:mt-8"
   >
     <li class="mr-4" *ngFor="let menu of footerMenus; let last = last">
       <a [routerLink]="menu.url">{{ menu.name }}</a>
@@ -29,7 +29,7 @@
     </li>
   </ul>
 
-  <div class="text-base-yellow text-sm font-bold mt-8">
+  <div class="text-base-yellow text-xs sm:text-sm font-bold mt-4 sm:mt-8">
     <h4>@ Copyright 2023 SocialNetwork inc.</h4>
     <ul class="flex items-center mt-2">
       <li class="mr-4">

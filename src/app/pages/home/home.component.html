@@ -2,13 +2,17 @@
   <section class="section-1 mb-16">
     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="lg:col-span-2">
-        <app-title name="Videos"></app-title>
-        <app-multiple-card></app-multiple-card>
+        <app-title name="Playing Now"></app-title>
+        <app-multiple-card
+          *ngIf="movies.length > 0"
+          [dataApi]="movies"
+          [firstArr]="firstMovies"
+        ></app-multiple-card>
       </div>
 
       <div class="mt-6 lg:mt-0">
         <div class="flex justify-between text-base-yellow font-bold">
-          <h1 class="text-lg sm:text-xl md:text-2xl">Activity</h1>
+          <h1 class="text-lg sm:text-xl md:text-2xl">Trending</h1>
           <div class="flex items-center">
             <button class="text-xs sm:text-sm mt-auto">View Timeline /</button>
             <button class="text-xs sm:text-sm mt-auto ml-1">Filter</button>
@@ -16,59 +20,40 @@
         </div>
 
         <div class="mt-4 border-t-2 border-base-yellow">
-          <div class="block sm:flex lg:block">
-            <div class="xl:flex items-center mt-4">
-              <div class="sm:h-24 sm:w-40">
-                <img
-                  src="assets/images/img.png"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div class="mt-2 xl:ml-2 text-base-yellow">
-                <h2 class="font-bold text-sm sm:text-base">
-                  John Stainlor
-                  <span class="font-light text-xs sm:text-sm">commented</span>
-                </h2>
-                <h2 class="font-light text-xs sm:text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo, hic.
-                </h2>
-                <div>
-                  <i
-                    class="fa fa-comment text-xs sm:text-sm"
-                    aria-hidden="true"
-                  ></i>
-                  <span class="font-light text-xs sm:text-sm ml-2"
-                    >3 comment</span
-                  >
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:block mt-2">
+            <div
+              class="lg:flex items-center cursor-pointer"
+              *ngFor="let trending of populars"
+            >
+              <div class="lg:w-[30%]">
+                <div class="lg:h-16 lg:w-28">
+                  <img
+                    [src]="
+                      urlImage + 'w500_and_h282_face' + trending.poster_path
+                    "
+                    class="h-full w-full brightness-50 object-cover"
+                  />
                 </div>
               </div>
-            </div>
-
-            <div class="xl:flex items-center mt-4">
-              <div class="sm:h-24 sm:w-40">
-                <img
-                  src="assets/images/img.png"
-                  class="h-full w-full object-cover"
-                />
-              </div>
-              <div class="mt-2 xl:ml-2 text-base-yellow">
-                <h2 class="font-bold text-sm sm:text-base">
-                  John Stainlor
-                  <span class="font-light text-xs sm:text-sm">commented</span>
-                </h2>
-                <h2 class="font-light text-xs sm:text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Explicabo, hic.
-                </h2>
-                <div>
-                  <i
-                    class="fa fa-comment text-xs sm:text-sm"
-                    aria-hidden="true"
-                  ></i>
-                  <span class="font-light text-xs sm:text-sm ml-2"
-                    >3 comment</span
+              <div class="lg:w-[70%] md:ml-4">
+                <div class="mt-2 text-base-yellow">
+                  <h2 class="font-bold text-sm sm:text-base">
+                    {{ trending.title }}
+                  </h2>
+                  <div
+                    class="font-light text-xs sm:text-sm truncate md:w-32 lg:w-40 xl:w-72"
                   >
+                    {{ trending.overview }}
+                  </div>
+                  <div>
+                    <i
+                      class="fa fa-comment text-xs sm:text-sm"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="font-light text-xs sm:text-sm ml-2">{{
+                      trending.vote_count
+                    }}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,37 +67,46 @@
     <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-4">
       <div class="lg:col-span-2">
         <div>
-          <app-title name="People"></app-title>
-          <app-multiple-card></app-multiple-card>
+          <app-title name="Populars"></app-title>
+          <app-multiple-card
+            *ngIf="populars.length > 0"
+            [dataApi]="populars"
+            [firstArr]="firstPop"
+          ></app-multiple-card>
         </div>
         <div class="mt-16">
-          <app-title name="Documents"></app-title>
-          <app-multiple-card></app-multiple-card>
+          <app-title name="Upcomings"></app-title>
+          <app-multiple-card
+            *ngIf="upcoming.length > 0"
+            [dataApi]="upcoming"
+            [firstArr]="firstUp"
+          ></app-multiple-card>
         </div>
       </div>
 
       <div class="mt-6 lg:mt-0">
         <div class="flex justify-between text-base-yellow font-bold">
-          <h1 class="text-lg sm:text-xl md:text-2xl">Channels</h1>
+          <h1 class="text-lg sm:text-xl md:text-2xl">Channels TV</h1>
           <div class="flex items-center">
             <button class="text-sm mt-auto">Browse</button>
           </div>
         </div>
-        <div class="pt-4 border-t-2 border-base-yellow">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="relative bg-base-yellow h-36">
+        <div class="py-4 border-t-2 sm:border-b-2 border-base-yellow">
+          <div class="grid sm:grid-cols-2 md:grid-cols-2 gap-4">
+            <div
+              class="relative bg-base-yellow h-36 cursor-pointer"
+              *ngFor="let tv of tvPopular"
+            >
               <h4
-                class="absolute text-base-primary bottom-2 left-3 font-bold text-xl"
+                class="absolute text-base-yellow z-10 bottom-2 left-3 font-bold text-sm md:text-base"
               >
-                Google
+                {{ tv.name }}
               </h4>
-            </div>
-            <div class="relative bg-base-yellow h-36">
-              <h4
-                class="absolute text-base-primary bottom-2 left-3 font-bold text-xl"
-              >
-                Google
-              </h4>
+
+              <img
+                [src]="urlImage + 'w500_and_h282_face' + tv.poster_path"
+                class="h-full w-full brightness-50 object-cover"
+              />
             </div>
           </div>
         </div>

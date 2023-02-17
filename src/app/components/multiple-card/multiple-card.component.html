@@ -1,82 +1,45 @@
 <div class="multiple-card">
   <div class="mt-4">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div
-        class="bg-base-yellow lg:col-span-2 lg:row-span-2 bg-cover bg-center bg-no-repeat"
-      >
+      <div class="bg-base-yellow lg:col-span-2 lg:row-span-2 cursor-pointer">
         <div class="h-full bg-base-black-transparent relative">
           <img
-            src="assets/images/img.png"
+            [src]="
+              apiService.urlImage + 'w500_and_h282_face' + firstArr.poster_path
+            "
             class="h-full w-full object-cover brightness-50"
           />
           <div class="absolute bottom-0 text-base-yellow font-bold w-full p-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl">How to improve skill</h2>
+            <h2 class="text-lg sm:text-xl md:text-2xl">{{ firstArr.title }}</h2>
             <div class="flex items-center justify-between">
-              <h4 class="text-xs sm:text-sm md:text-base">Toni aja</h4>
-              <h5 class="text-xs sm:text-sm md:text-base">400 views</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bg-base-yellow bg-cover bg-center bg-no-repeat">
-        <div class="h-full bg-base-black-transparent relative">
-          <img
-            src="assets/images/img.png"
-            class="h-full w-full object-cover brightness-50"
-          />
-          <div class="absolute bottom-0 text-base-yellow font-bold w-full p-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl">How to improve skill</h2>
-            <div class="flex items-center justify-between">
-              <h4 class="text-xs sm:text-sm md:text-base">Toni aja</h4>
-              <h5 class="text-xs sm:text-sm md:text-base">400 views</h5>
+              <h4 class="text-xs sm:text-sm md:text-base">
+                Release: {{ firstArr.release_date | date : "h MMMM YYYY" }}
+              </h4>
+              <h5 class="text-xs sm:text-sm md:text-base">
+                {{ firstArr.vote_average }} Rating
+              </h5>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="bg-base-yellow bg-cover bg-center bg-no-repeat">
+      <div class="bg-base-yellow cursor-pointer" *ngFor="let item of dataApi">
         <div class="h-full bg-base-black-transparent relative">
           <img
-            src="assets/images/img.png"
+            [src]="
+              apiService.urlImage + 'w500_and_h282_face' + item.poster_path
+            "
             class="h-full w-full object-cover brightness-50"
           />
           <div class="absolute bottom-0 text-base-yellow font-bold w-full p-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl">How to improve skill</h2>
+            <h2 class="text-lg sm:text-xl md:text-2xl">{{ item.title }}</h2>
             <div class="flex items-center justify-between">
-              <h4 class="text-xs sm:text-sm md:text-base">Toni aja</h4>
-              <h5 class="text-xs sm:text-sm md:text-base">400 views</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-base-yellow bg-cover bg-center bg-no-repeat">
-        <div class="h-full bg-base-black-transparent relative">
-          <img
-            src="assets/images/img.png"
-            class="h-full w-full object-cover brightness-50"
-          />
-          <div class="absolute bottom-0 text-base-yellow font-bold w-full p-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl">How to improve skill</h2>
-            <div class="flex items-center justify-between">
-              <h4 class="text-xs sm:text-sm md:text-base">Toni aja</h4>
-              <h5 class="text-xs sm:text-sm md:text-base">400 views</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-base-yellow bg-cover bg-center bg-no-repeat">
-        <div class="h-full bg-base-black-transparent relative">
-          <img
-            src="assets/images/img.png"
-            class="h-full w-full object-cover brightness-50"
-          />
-          <div class="absolute bottom-0 text-base-yellow font-bold w-full p-4">
-            <h2 class="text-lg sm:text-xl md:text-2xl">How to improve skill</h2>
-            <div class="flex items-center justify-between">
-              <h4 class="text-xs sm:text-sm md:text-base">Toni aja</h4>
-              <h5 class="text-xs sm:text-sm md:text-base">400 views</h5>
+              <h4 class="text-xs sm:text-sm md:text-base md:hidden block">
+                Release: {{ item.release_date | date : "h MMMM YYYY" }}
+              </h4>
+              <h5 class="text-xs sm:text-sm md:text-base">
+                {{ item.vote_average }} Rating
+              </h5>
             </div>
           </div>
         </div>
@@ -92,22 +55,11 @@
                   aria-hidden="true"
                 ></i>
               </div>
-              <h5 class="ml-2 text-xs sm:text-sm md:text-base">
-                Upload Your Own Video
-              </h5>
+              <h5 class="ml-2 text-xs sm:text-sm md:text-base">See More</h5>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- <div class="grid grid-cols-3 gap-4">
-      <div class="bg-base-yellow">01</div>
-      <div class="bg-base-yellow">02</div>
-      <div class="bg-base-yellow">03</div>
-      <div class="bg-base-yellow">04</div>
-      <div class="bg-base-yellow">05</div>
-      <div class="bg-base-yellow">06</div>
-    </div> -->
   </div>
 </div>

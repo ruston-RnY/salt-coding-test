@@ -12,12 +12,12 @@ export class HeaderComponent implements OnInit {
       url: 'playing-now',
     },
     {
-      name: 'Trending',
-      url: 'trending',
+      name: 'Populars',
+      url: 'populars',
     },
     {
-      name: 'Favorites',
-      url: 'favorites',
+      name: 'Upcoming',
+      url: 'upcoming',
     },
     {
       name: 'Artist',

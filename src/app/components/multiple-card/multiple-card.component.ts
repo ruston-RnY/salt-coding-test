@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ApiService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-multiple-card',
@@ -6,9 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./multiple-card.component.scss'],
 })
 export class MultipleCardComponent implements OnInit {
-  @Input() title!: string;
+  @Input() dataApi: any = [];
+  @Input() firstArr: any;
 
-  constructor() {}
+  constructor(public apiService: ApiService) {}
 
   ngOnInit(): void {}
 }

@@ -8,6 +8,7 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { MultipleCardComponent } from './components/multiple-card/multiple-card.component';
 import { TitleComponent } from './components/title/title.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,10 @@ import { TitleComponent } from './components/title/title.component';
     HeaderComponent,
     FooterComponent,
     MultipleCardComponent,
-    TitleComponent
+    TitleComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

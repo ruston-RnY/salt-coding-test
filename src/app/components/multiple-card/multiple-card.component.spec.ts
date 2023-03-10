@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { MultipleCardComponent } from './multiple-card.component';
 
@@ -8,9 +9,9 @@ describe('MultipleCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MultipleCardComponent ]
-    })
-    .compileComponents();
+      declarations: [MultipleCardComponent],
+      imports: [HttpClientTestingModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(MultipleCardComponent);
     component = fixture.componentInstance;
